@@ -1,0 +1,45 @@
+.spoiler{
+
+  &__item{
+    margin: 0 0 20px 0;
+  }
+  &__title{
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor:pointer;
+    position: relative;
+    padding-left: 30px;
+    &:before,
+    &:after
+    {
+      content: '';
+      @include box(10px, 1px);
+      @include abs-position(8px, auto, auto, auto);
+      transition: all .3s ease 0s;
+      background-color: #000;
+    }
+    &:before{
+      transform: rotate(40deg);
+      left: 0;
+    }
+    &:after{
+      transform: rotate(-40deg);
+      left: 8px;
+    }
+    &.active:before,
+    &.active:after
+    {
+      background-color: red;
+    }
+    &.active:before{
+      transform: rotate(-40deg);
+    }
+    &.active:after{
+      transform: rotate(40deg);
+    }
+  }
+  &__text{
+    padding: 10px 0 0 0;
+    display: none;
+  }
+}

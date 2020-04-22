@@ -1,0 +1,139 @@
+$form-color-1:#4fbb65;
+$form-color-2:#bfc0c4;
+$form-color-3:#b2b2b2;
+.form{
+  &__title{
+    @include font-size(40px);
+    margin-bottom: 20px;
+  }
+
+  &__input{
+    margin-bottom: 20px;
+  }
+
+  .checkbox{
+    @include font-size(16px);
+    @include line-height(20px);
+    padding: 0 0 0 70px;
+    position: relative;
+    cursor: pointer;
+    color:$form-color-3;
+    transition: all 0.3s ease 0s;
+
+    &.active{
+      color:$black;
+    }
+    &.active:before{
+      background-color: $form-color-1;
+    }
+    &.active:after{
+      background-color: $form-color-1;
+      left: 25px;
+    }
+
+    &:before{
+      content: '';
+      @include box(50px,20px);
+      border-radius: 20px;
+      background-color: $form-color-2;
+      @include abs-position(0,auto,auto,0);
+      box-shadow: 0 0 5px rgba(0,0,0,.3);
+      transition: all 0.3s ease 0s;
+    }
+    &:after{
+      content: '';
+      @include box(30px,30px);
+      @include abs-position(-5px,auto,auto,0);
+      box-shadow: 0 0 5px rgba(0,0,0,.3);
+      border-radius: 50%;
+      background-color: $form-color-2;
+      transition: all 0.3s ease 0s;
+    }
+
+    input{
+      display: none;
+    }
+  }
+
+  .radiobuttons{
+
+    &__item{
+      position: relative;
+      padding: 0 0 0 45px;
+      @include font-size(16px);
+      @include line-height(20px);
+      color: $form-color-3;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+
+      &.active{
+        color:$black;
+
+        &:after{
+          transform: scale(1);
+        }
+      }
+
+      &:before{
+        content: '';
+        @include box(30px,30px);
+        background-color: $form-color-2;
+        @include abs-position(0,auto,auto,0);
+        box-shadow: 0 0 5px rgba(0,0,0,.3);
+        border-radius: 50%;
+      }
+      &:after{
+        content: '';
+        @include box(20px,20px);
+        @include abs-position(5px,auto,auto,5px);
+        border-radius: 50%;
+        transition: all 0.3s ease 0s;
+        background-color: $form-color-1;
+        transform: scale(0);
+      }
+
+      input{
+        display: none;
+      }
+    }
+  }
+
+  .button{
+    position: relative;
+    overflow: hidden;
+    @include line-height(60px);
+    display: inline-block;
+    cursor:pointer;
+    text-transform: uppercase;
+    @include letter-spacing(8px);
+    padding: 0 30px;
+    @include font-size(18px);
+    border-radius: 25px;
+    background-color: $form-color-2;
+    transition: all 0.3s ease 0s;
+
+    span{
+      position: relative;
+      z-index: 2;
+    }
+
+    &:before{
+      content: '';
+      @include abs-position(0,auto,auto,0);
+      @include box();
+      background-color: $form-color-1;
+      border-radius: 25px;
+
+      transform: scale(0);
+      transition: all 0.3s ease 0s;
+    }
+
+    &:hover{
+      color: $white;
+    }
+    &:hover:before{
+      transform: scale(1);
+    }
+  }
+}

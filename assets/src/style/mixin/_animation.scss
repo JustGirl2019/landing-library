@@ -1,0 +1,7 @@
+@mixin anim($time, $delay) {
+  -webkit-transition: all $time ease $delay;
+  -moz-transition: all $time ease $delay;
+  -ms-transition: all $time ease $delay;
+  -o-transition: all $time ease $delay;
+  transition: all $time ease $delay;
+}

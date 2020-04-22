@@ -1,0 +1,9 @@
+// Абсолютное позиционирование. Позволяет быстро указать значения для четырех направлений: сверху, справа, снизу и слева.
+// @include abs-position(50px, 80px, auto, auto);
+@mixin abs-position ($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

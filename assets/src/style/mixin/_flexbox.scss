@@ -1,0 +1,18 @@
+@mixin flexbox(){
+  display: flex;
+  font-size: 0;
+}
+@mixin flexboxinline(){
+  display: inline-flex;
+}
+@mixin flexorder($val){
+  order:$val;
+}
+@mixin cnt($h){
+  display: flex;
+  flex-direction: column;
+  height: $h;
+  text-align: center;
+  align-items: stretch;
+  justify-content: center;
+}

@@ -1,0 +1,7 @@
+@mixin scale($num) {
+  -moz-transform: scale($num);
+  -ms-transform: scale($num);
+  -webkit-transform: scale($num);
+  -o-transform: scale($num);
+  transform: scale($num);
+}
