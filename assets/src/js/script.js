@@ -4,6 +4,7 @@ $(document).ready(function()
     Form(); // форма с плавными эффектами и скрытием стандартных input
     Spoiler();
     ibg(); // img в background
+    Slider(); // slick-слайдер
 
     function Form() {
         //CHECKBOX
@@ -37,6 +38,7 @@ $(document).ready(function()
             return false;
         });
     }
+
     function Spoiler() {
         $('.spoiler__title').click(function (event) {
             if($('.spoiler').hasClass('spoiler-one')){
@@ -46,11 +48,18 @@ $(document).ready(function()
             $(this).toggleClass('active').next().slideToggle(300);
         });
     }
+
     function ibg(){
         $.each($('.ibg'), function(index, val) {
             if($(this).find('img').length>0){
                 $(this).css('background-image','url("'+$(this).find('img').attr('src')+'")');
             }
+        });
+    }
+
+    function Slider(){
+        $('.slider').slick({
+
         });
     }
 

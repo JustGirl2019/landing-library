@@ -1,0 +1,63 @@
+.slider{
+  //max-width: 0; /* если слайдер находится внутри флекс-элемента либо он сам является флек-элементом - следует обязательно ставить это свойство */
+  position: relative;
+  padding: 0 50px;
+
+  &.slick-track{
+    //display: block; для вертикального слайдера
+  }
+
+  .slick-arrow{
+    @include abs-position(50%, auto,auto,auto);
+    margin: -30px 0 0 0;
+    z-index: 10;
+    font-size: 0;
+    @include box(30px,50px);
+
+    &.slick-prev{
+      left: 0;
+      background: url('../../img/element/left.svg') 0 0 / 100% no-repeat;
+    }
+    &.slick-next{
+      right: 0;
+      background: url('../../img/element/right.svg') 0 0 / 100% no-repeat;
+    }
+    &.slick-disabled{
+      opacity: .2;
+    }
+  }
+
+  .slick-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li{
+      margin: 0 10px;
+      cursor: pointer;
+
+       &.slick-active button{
+         background-color: transparent;
+         border: 1px solid $white;
+
+      }
+    }
+    button{
+      font-size: 0;
+      @include box(10px,10px);
+      background-color: $white;
+      border-radius: 50%;
+    }
+  }
+
+  &__item{
+    // transition: all .3s ease 0s;
+    // opacity: .4;
+    text-align: center; // распределить слайды по центру
+
+    // height: 200px; // если слайдер вертикальный - нужно указывать высоту
+
+    &.slick-center{
+      opacity: 1;
+    }
+  }
+}
